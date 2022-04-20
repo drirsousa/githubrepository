@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Github Repository</string>
+    <string name="label_repository_name">Repositório:</string>
+    <string name="label_stars_qty">Qtd estrelas:</string>
+    <string name="label_forks_qty">Qtd forks:</string>
+
+    <!-- Progress -->
+    <string name="progress_loading">Carregando…</string>
+</resources>
