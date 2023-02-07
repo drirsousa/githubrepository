@@ -7,14 +7,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.rosait.githubrepository.data.repository.GithubRepository
 import br.com.rosait.githubrespositories.data.model.RepositoryItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.java.KoinJavaComponent.inject
 
 class RepositoryViewModel(
-    application: Application,
-    private val githubRepository: GithubRepository)
+    application: Application)
     : AndroidViewModel(application) {
+
+    private val githubRepository: GithubRepository by inject(GithubRepository::class.java)
 
     private val _repositoryItems by lazy { MutableLiveData<List<RepositoryItem>>() }
     val repositoryItemItem: LiveData<List<RepositoryItem>> get() = _repositoryItems

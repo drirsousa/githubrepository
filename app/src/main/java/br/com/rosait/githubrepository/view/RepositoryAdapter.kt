@@ -17,10 +17,6 @@ class RepositoryAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var isLoadingAdded = false
 
     private var items: ArrayList<RepositoryItem> = ArrayList()
-        /*set(value) {
-            field = value
-            notifyDataSetChanged()
-        }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View
@@ -88,7 +84,7 @@ class RepositoryAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.get(position)
     }
 
-    inner class ItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val repositoryName: TextView by lazy { itemView.findViewById(R.id.repositoryNameValue)  }
         private val starsQty: TextView by lazy { itemView.findViewById(R.id.starsQtyValue)  }
         private val forkQty: TextView by lazy { itemView.findViewById(R.id.forkQtyValue)  }
@@ -111,7 +107,7 @@ class RepositoryAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    inner class LoadingVH(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    class LoadingVH(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         override fun onClick(view: View?) {
             //Nothing to do
         }

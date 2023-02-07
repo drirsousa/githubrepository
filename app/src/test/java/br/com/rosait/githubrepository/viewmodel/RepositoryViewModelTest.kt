@@ -15,6 +15,9 @@ import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.*
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
 import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
@@ -37,7 +40,13 @@ class RepositoryViewModelTest {
 
         Dispatchers.setMain(testDispatcher)
 
-        viewModelSpy = spyk(RepositoryViewModel(applicationMock, githubRepositoryMock), recordPrivateCalls = true)
+        startKoin {
+            modules(module {
+                factory { githubRepositoryMock }
+            })
+        }
+
+        viewModelSpy = spyk(RepositoryViewModel(applicationMock), recordPrivateCalls = true)
     }
 
     @After
@@ -46,6 +55,7 @@ class RepositoryViewModelTest {
         Dispatchers.resetMain()
         testDispatcher.cleanupTestCoroutines()
         unmockkAll()
+        stopKoin()
     }
 
     @ExperimentalCoroutinesApi
