@@ -9,7 +9,7 @@ This app list Github repositories with infinite scroll. The app shows items with
 - Unit tests: Mockk
 - Communication with backend: Retrofit and Coroutines
 - Dependency Injection: Koin
-- Image loading: Glide
+- Image loading and cache: Glide
 - Support screen orientation changes without losing state
 
 <b>TO DO list:</b>
