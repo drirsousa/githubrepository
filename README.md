@@ -7,6 +7,7 @@ This app list Github repositories with infinite scroll. The app shows items with
 - Language: Kotlin
 - Architecture: MVVM
 - Unit tests: Mockk
+- Instrumented tests: Espresso
 - Communication with backend: Retrofit and Coroutines
 - Dependency Injection: Koin
 - Image loading and cache: Glide
