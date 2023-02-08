@@ -18,6 +18,6 @@ This app list Github repositories with infinite scroll. The app shows items with
 - Add splashscreen
 - UI and UX improvements
 
-<b>Demo App</b>
+<b>App Demo</b>
 
 ![](https://github.com/drirsousa/githubrepository/blob/master/github-search-repositories.gif)
